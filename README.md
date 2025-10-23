@@ -1,6 +1,6 @@
-# 🚀 Selenium MCP Server - AI-Powered Test Generation (Zero Code Required!)
+# 🚀 Selenium MCP Server - AI-Powered Test Generation in VS Code (Zero Code Required!)
 
-> Generate complete Selenium TestNG tests using natural language with Claude AI - No coding required!
+> Generate complete Selenium TestNG tests using natural language in VS Code - No coding required!
 
 ## 📋 Table of Contents
 - [What is Selenium MCP?](#what-is-selenium-mcp)
@@ -17,14 +17,15 @@
 
 ## 🤖 What is Selenium MCP?
 
-**Selenium MCP (Model Context Protocol)** allows Claude AI to generate complete, production-ready Selenium tests from simple natural language prompts. 
+**Selenium MCP (Model Context Protocol)** allows VS Code to generate complete, production-ready Selenium tests from simple natural language prompts through AI assistance.
 
 ### ✨ Key Features:
 - 🎯 **Zero Code Required** - Just describe what you want to test
-- 🤖 **AI-Powered** - Claude understands testing best practices
+- 🤖 **AI-Powered** - AI understands testing best practices
 - 📝 **Complete Tests** - Generates setup, teardown, assertions, and error handling
 - 🔧 **Ready to Run** - Uses modern frameworks like TestNG and WebDriverManager
 - ⚡ **Instant** - Get working tests in seconds
+- 💻 **VS Code Integration** - Works directly in your development environment
 
 ---
 
@@ -35,24 +36,24 @@ Before getting started, ensure you have the following installed:
 - 💻 **Visual Studio Code** (latest version)
 - ☕ **Java Development Kit (JDK)** 11 or higher
 - 📦 **Maven** 3.6 or higher
-- 🌐 **Node.js** and **npm** (for MCP server)
+- 🌐 **Node.js** 16+ and **npm** (for MCP server)
 - 🔧 **Extension Pack for Java** (VS Code extension)
-- 🤖 **Claude Desktop App** or **Claude Code CLI**
+- 🤖 **VS Code with AI Assistant** (GitHub Copilot, Cody, or similar with MCP support)
 
 ---
 
 ## 🛠️ Setting Up Selenium MCP Server
 
-### Step 1: Configure MCP Server in Claude (Using NPX)
+### Step 1: Configure MCP Server in VS Code (Using NPX)
 
-#### For Claude Desktop App:
+#### Configuration File Location:
 
-1. Open your Claude configuration file:
-   - **Windows**: `C:\Users\yourfolder\AppData\Roaming\Code\User\mcp.json`
-   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - **Linux**: `~/.config/Claude/claude_desktop_config.json`
+1. Navigate to your VS Code MCP configuration file:
+   - **Windows**: `C:\Users\mvsar\AppData\Roaming\Code\User\mcp.json`
+   - **macOS**: `~/Library/Application Support/Code/User/mcp.json`
+   - **Linux**: `~/.config/Code/User/mcp.json`
 
-2. Add the Selenium MCP server configuration using NPX:
+2. If the file doesn't exist, create it with the following content:
 
 ```json
 {
@@ -68,13 +69,31 @@ Before getting started, ensure you have the following installed:
 }
 ```
 
-3. Save the file and restart Claude Desktop App
+3. Save the file
 
 #### Why NPX?
 ✅ No manual installation required  
 ✅ Always uses the latest version  
 ✅ Cleaner configuration  
 ✅ No build steps needed
+
+### Step 2: Start the MCP Server in VS Code
+
+After configuring the server, you need to start it manually:
+
+1. **Open Command Palette** in VS Code:
+   - Windows/Linux: `Ctrl + Shift + P`
+   - macOS: `Cmd + Shift + P`
+
+2. **Type**: `MCP: List Servers`
+
+3. **Select**: `selenium` from the list
+
+4. **Start the Server**: Click on the start/play button or select the option to start
+
+5. **Verify Server Status**: The server should show as "Running" ✅
+
+> ⚠️ **Important**: Make sure the server is in **RUN** condition before generating tests. Check the MCP status indicator in VS Code.
 
 ---
 
@@ -180,11 +199,44 @@ mvn clean install
 
 ---
 
-## 🚦 Starting Selenium MCP Server
+## 🚦 Starting Selenium MCP Server in VS Code
 
-### Automatic Start (NPX Method - Recommended)
+### Manual Start Process (Required)
 
-When using the NPX configuration, the MCP server automatically starts when you launch Claude Desktop or Claude Code CLI. No manual start required!
+The MCP server needs to be manually started in VS Code after configuration:
+
+#### Step-by-Step:
+
+1. **Open VS Code Command Palette**
+   ```
+   Ctrl + Shift + P (Windows/Linux)
+   Cmd + Shift + P (macOS)
+   ```
+
+2. **Search and Select**
+   - Type: `MCP: List Servers`
+   - Press Enter
+
+3. **Locate Selenium Server**
+   - Find `selenium` in the list of configured servers
+
+4. **Start the Server**
+   - Click the **Start** button/icon next to `selenium`
+   - Or select the option to start the server
+
+5. **Verify Status**
+   - Server status should change to **"Running"** ✅
+   - Green indicator or checkmark should appear
+
+> 🔴 **Critical**: The server MUST be in **RUN** condition before you can generate tests!
+
+### Configuration File Location:
+
+```
+Windows: C:\Users\mvsar\AppData\Roaming\Code\User\mcp.json
+```
+
+### NPX Configuration (Already Set):
 
 ```json
 {
@@ -197,36 +249,35 @@ When using the NPX configuration, the MCP server automatically starts when you l
 }
 ```
 
-✅ **Benefits:**
-- Automatically starts with Claude
-- Always uses the latest version
-- No manual installation or build steps
-- Self-updating
-
 ### ✅ Verify Server is Running
 
-Check the Claude Desktop logs or Claude Code output for:
-```
-[INFO] Selenium MCP Server started successfully
-[INFO] Listening for commands...
-```
-
-To verify the configuration file location, check:
-- Windows: `C:\Users\mvsar\AppData\Roaming\Code\User\mcp.json`
+Check the VS Code status bar or MCP panel for:
+- ✅ Green indicator for `selenium` server
+- ✅ Status shows "Running" or "Active"
+- ✅ No error messages in the output panel
 
 ---
 
 ## 🎯 How to Generate Tests (Zero Code!)
 
-This is where the magic happens! Once your MCP server is configured, you can generate complete Selenium tests without writing any code.
+This is where the magic happens! Once your MCP server is configured and running in VS Code, you can generate complete Selenium tests without writing any code.
 
-### Step 1: Open Claude (Desktop or Code)
+### Step 1: Ensure MCP Server is Running
 
-Make sure your Selenium MCP server is configured and Claude is running.
+1. Open Command Palette: `Ctrl + Shift + P`
+2. Type: `MCP: List Servers`
+3. Verify `selenium` server shows **"Running"** status ✅
 
-### Step 2: Use Natural Language Prompts
+### Step 2: Open Your AI Assistant in VS Code
 
-Simply describe what you want to test in plain English. Claude will generate the complete test code for you!
+Use any MCP-compatible AI assistant in VS Code:
+- GitHub Copilot Chat
+- Cody
+- Or any other AI extension with MCP support
+
+### Step 3: Use Natural Language Prompts
+
+Simply describe what you want to test in plain English. The AI will generate the complete test code for you!
 
 ### 🧪 Example Prompt (From Our Project):
 
@@ -236,9 +287,9 @@ Simply describe what you want to test in plain English. Claude will generate the
 heading, and adds the Sauce Labs Backpack to the cart.
 ```
 
-### Step 3: Claude Generates Complete Test
+### Step 4: AI Generates Complete Test
 
-Claude will automatically create a **complete, production-ready test** including:
+The AI assistant will automatically create a **complete, production-ready test** including:
 
 ✅ **Package declaration** and all necessary imports  
 ✅ **WebDriver setup** using WebDriverManager  
@@ -322,9 +373,9 @@ public class SampleTest {
 
 ### 🎉 That's It!
 
-**You didn't write a single line of code** - Claude generated everything based on your natural language prompt!
+**You didn't write a single line of code** - AI generated everything based on your natural language prompt through the MCP server!
 
-### Step 4: Save and Run
+### Step 5: Save and Run
 
 1. **Save the generated code** to your test directory:
    - `src/test/java/com/selenium/mcp/SampleTest.java`
@@ -446,9 +497,15 @@ npx -y @angiejones/mcp-selenium
 ```
 
 **Check Configuration File:**
-- Windows: Verify `C:\Users\yourfolder\AppData\Roaming\Code\User\mcp.json` exists
+- Windows: Verify `C:\Users\mvsar\AppData\Roaming\Code\User\mcp.json` exists
 - Ensure JSON syntax is correct (no trailing commas)
-- Restart Claude Desktop completely
+- Restart VS Code completely
+
+**Start Server Manually:**
+1. Open Command Palette: `Ctrl + Shift + P`
+2. Type: `MCP: List Servers`
+3. Select `selenium` and click Start
+4. Verify status shows "Running"
 
 #### ❌ Maven Dependencies Not Resolving
 
@@ -476,11 +533,11 @@ public void setup() {
 }
 ```
 
-#### ❌ Claude Not Detecting MCP Server
+#### ❌ VS Code Not Detecting MCP Server
 
 **Solution:**
 1. Verify the configuration file path:
-   - Windows: `C:\Users\yourfolder\AppData\Roaming\Code\User\mcp.json`
+   - Windows: `C:\Users\mvsar\AppData\Roaming\Code\User\mcp.json`
 2. Ensure the NPX command is correct:
    ```json
    {
@@ -492,8 +549,10 @@ public void setup() {
      }
    }
    ```
-3. Restart Claude Desktop completely
-4. Check Claude logs for error messages
+3. Restart VS Code completely
+4. Manually start the server:
+   - Command Palette → `MCP: List Servers` → Select `selenium` → Start
+5. Check VS Code output panel for error messages
 
 ---
 
@@ -504,6 +563,7 @@ public void setup() {
 - 🧪 **TestNG Documentation**: [testng.org/doc](https://testng.org/doc/)
 - 🔧 **Maven Documentation**: [maven.apache.org](https://maven.apache.org/)
 - 💻 **VS Code Java**: [code.visualstudio.com/docs/java](https://code.visualstudio.com/docs/java)
+- 🤖 **Model Context Protocol**: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 
 ---
 
@@ -522,13 +582,15 @@ This project follows the license terms of the [mcp-selenium](https://github.com/
 ## 🎯 Quick Start Checklist
 
 - [ ] Install prerequisites (JDK 11+, Maven 3.6+, Node.js 16+)
+- [ ] Install VS Code with Java Extension Pack
 - [ ] Configure `mcp.json` with NPX command (`C:\Users\mvsar\AppData\Roaming\Code\User\mcp.json`)
-- [ ] Restart Claude Desktop to load MCP server
 - [ ] Create Maven project in VS Code using Command Prompt
 - [ ] Add Selenium dependencies to pom.xml (run `mvn clean install`)
-- [ ] Open Claude and verify MCP server is connected
-- [ ] **🎯 Give Claude a prompt describing your test**
-- [ ] **✨ Watch Claude generate complete test code (no coding required!)**
+- [ ] **🚦 Start MCP Server: Command Palette → `MCP: List Servers` → Select `selenium` → Start**
+- [ ] **✅ Verify server status shows "Running"**
+- [ ] Open AI Assistant in VS Code (Copilot/Cody)
+- [ ] **🎯 Give AI a prompt describing your test**
+- [ ] **✨ Watch AI generate complete test code (no coding required!)**
 - [ ] Save the generated code to your test directory
 - [ ] Run `mvn test` and see it work!
 
@@ -536,7 +598,10 @@ This project follows the license terms of the [mcp-selenium](https://github.com/
 
 ## 🌟 Key Takeaway
 
-**You can create comprehensive, production-ready Selenium tests without writing a single line of code!** Just describe what you want to test in plain English, and Claude's Selenium MCP integration will generate everything for you - complete with best practices, proper waits, assertions, and error handling.
+**You can create comprehensive, production-ready Selenium tests in VS Code without writing a single line of code!** Just:
+1. Configure and start the MCP server
+2. Describe what you want to test in plain English to your AI assistant
+3. Get complete, working code with best practices, proper waits, assertions, and error handling
 
 ---
 
