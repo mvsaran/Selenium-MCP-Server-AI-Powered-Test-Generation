@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-23T13:28:59 IST" name="Surefire suite" finished-at="2025-10-23T13:29:01 IST" duration-ms="2254">
+    <groups>
+    </groups>
+    <test started-at="2025-10-23T13:28:59 IST" name="Surefire test" finished-at="2025-10-23T13:29:01 IST" duration-ms="2254">
+      <class name="com.selenium.mcp.SampleTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.selenium.mcp.SampleTest@25d250c6]" started-at="2025-10-23T13:28:59 IST" name="setup" finished-at="2025-10-23T13:29:00 IST" duration-ms="1271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="sauceDemoLoginAndAddToCart()[pri:0, instance:com.selenium.mcp.SampleTest@25d250c6]" started-at="2025-10-23T13:29:00 IST" name="sauceDemoLoginAndAddToCart" finished-at="2025-10-23T13:29:01 IST" duration-ms="824" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sauceDemoLoginAndAddToCart -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.selenium.mcp.SampleTest@25d250c6]" started-at="2025-10-23T13:29:01 IST" name="teardown" finished-at="2025-10-23T13:29:01 IST" duration-ms="134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.selenium.mcp.SampleTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
